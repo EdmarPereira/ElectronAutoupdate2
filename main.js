@@ -1,8 +1,12 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const updater = require('./updater')
 
 function createWindow () {
+
+  // check for updates in 3 seconds 
+  setTimeout( updater, 3000 )
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
