@@ -6,10 +6,15 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder -w",
-    "make-cert": "electron-builder create-self-signed-cert -p certificate ",
-    "publish": "build --win -p always"
+    "release": "electron-builder -w -p onTagOrDraft",
+    "make-cert": "electron-builder create-self-signed-cert -p certificate "
   },
   "build": {
+    "appId": "com.autoupdate2.try",
+    "copyright":"Copyright 2020 Ped Industry",
+    "publish": {
+      "provider": "github"
+    },
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico",
