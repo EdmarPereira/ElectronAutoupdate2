@@ -2,7 +2,7 @@
 
 **Commands to run release.**
 
-GH_TOKEN=28ce5314ee2252446a39b62768cf55964465b410 npm run release
+GH_TOKEN=e303a5d2e2d3d5c0894ec9a5467ef0ffef0f4307 npm run release
 
 
 **Place of logger**
