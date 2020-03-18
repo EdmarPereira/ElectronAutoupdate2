@@ -7,7 +7,7 @@
     "start": "electron .",
     "build-mac": "electron-builder -m",
     "build-win": "electron-builder -w",
-    "release-win": "electron-builder -w -p 'onTagOrDraft'",
+    "release-win": "electron-builder -w -p always",
     "release-all": "electron-builder -mw -p 'onTagOrDraft'",
     "make-cert": "electron-builder create-self-signed-cert -p certificate "
   },
@@ -18,7 +18,7 @@
       "provider": "github"
     },
     "mac": {
-      "category": "public.app-category.producti"
+      "category": "public.app-category.productivity"
     },
     "win": {
       "target": "nsis",
