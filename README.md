@@ -2,9 +2,9 @@
 
 **Commands to run release.**
 
-MAC ==> GH_TOKEN=e303a5d2e2d3d5c0894ec9a5467ef0ffef0f4307 npm run release
+MAC ==> GH_TOKEN=ToKEN npm run release
 
-WIN ==> setx GH_TOKEN "e303a5d2e2d3d5c0894ec9a5467ef0ffef0f4307" npm run release
+WIN ==> setx GH_TOKEN "TOKEN" npm run release
 
 **Place of logger**
 on Linux: ~/.config/{app name}/logs/{process type}.log
