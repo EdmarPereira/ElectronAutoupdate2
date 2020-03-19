@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-mac": "electron-builder -m",
-    "build-win": "electron-builder -w",
-    "release-win": "electron-builder -w -p 'always'",
-    "release-all": "electron-builder -mw -p 'onTagOrDraft'",
+    "build-mac": "rimraf build && rimraf dist && electron-builder -m",
+    "build-win": "rimraf build && rimraf dist && electron-builder -w",
+    "release-win": "rimraf build && rimraf dist && electron-builder -w -p 'always'",
+    "release-all": "rimraf build && rimraf dist && electron-builder -mw -p 'onTagOrDraft'",
     "make-cert": "electron-builder create-self-signed-cert -p certificate "
   },
   "build": {
