@@ -22,14 +22,40 @@ module.exports = () => {
     );
   });
 
-  autoUpdater.on('update-downloaded', () => {
-      dialog.showMessageBox({
-          type: 'info',
-          title: 'Update ready',
-          message: 'Install and restart now?',
-          buttons: ['Yes', 'Later']
-      }, buttonIndex => {
-          if (buttonIndex === 0) autoUpdater.quitAndInstall(false, true)
-      })
-  })
+  // autoUpdater.on('update-downloaded', () => {
+  //     dialog.showMessageBox({
+  //         type: 'info',
+  //         title: 'Update ready',
+  //         message: 'Install and restart now?',
+  //         buttons: ['Yes', 'Later']
+  //     }, buttonIndex => {
+  //         if (buttonIndex === 0) autoUpdater.quitAndInstall(false, true)
+  //     })
+  // })
+
+  autoUpdater.on('update-downloaded', (ev, info) => {
+    setImmediate(() => {
+        let iChoice = dialog.showMessageBox({
+            type: 'question',
+            message: oTrad['on-update-downloaded'],
+            buttons: [oTrad['quit_and_install'], oTrad['install_later']]
+        });
+        // if (iChoice === 0) {
+        //     setImmediate(() => {
+        //         var browserWindows = BrowserWindow.getAllWindows();
+        //         browserWindows.forEach(function(browserWindow) {
+        //             browserWindow.destroy();
+        //         });
+        //         autoUpdater.quitAndInstall();
+        //     })
+        // }
+
+        if (iChoice === 0) {
+          setImmediate(() => {
+             app.removeAllListeners("window-all-closed")
+             autoUpdater.quitAndInstall(false)
+           })
+         }
+    });
+});
 };
