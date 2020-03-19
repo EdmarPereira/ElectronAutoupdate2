@@ -7,7 +7,7 @@
     "start": "electron .",
     "build-mac": "electron-builder -m",
     "build-win": "electron-builder -w",
-    "release-win": "electron-builder -w -p always",
+    "release-win": "electron-builder -w -p 'always'",
     "release-all": "electron-builder -mw -p 'onTagOrDraft'",
     "make-cert": "electron-builder create-self-signed-cert -p certificate "
   },
@@ -22,7 +22,6 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico",
       "certificateFile": "private/certificate.pfx",
       "certificatePassword": "",
       "verifyUpdateCodeSignature": false,
